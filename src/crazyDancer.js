@@ -1,6 +1,7 @@
 var makeCrazyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.attr('class', 'crazyDancer');
+  this.$node.find('img').attr('src', 'emojis/emoji_poop.png');
   
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
