@@ -33,6 +33,7 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+
 .crazyDancer{
   /*border:20px solid blue;
   border-radius:10px;*/
@@ -47,4 +48,18 @@ body, a:link, a:visited, a:active{
 
 .greenDancer{
   position:absolute;
+}
+
+.groupDance{
+  position:absolute;
+  -webkit-animation: rotation 0.3s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from{
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
 }

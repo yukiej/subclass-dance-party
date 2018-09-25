@@ -1,4 +1,4 @@
-$(document).ready(function() {
+  $(document).ready(function() {
   window.dancers = [];
 
   $('.addDancerButton').on('click', function(event) {
@@ -43,5 +43,31 @@ $(document).ready(function() {
       window.dancers[i].setPosition(($("body").height() - 100) * Math.random(), ($("body").width() - 100) * Math.random());
     }
   });
+
+  $('.groupDanceButton').on('click', function(event){
+    //for each dancer in window.dancers
+    //calculate its distance to all the other dancers
+    //if the distance is within some set number
+    markNearestNeighbors(100);
+  });
+
+  function markNearestNeighbors(distance) {
+    var allDancers = window.dancers;
+    for (var i = 0; i < allDancers.length; i++) {
+      var minTop = allDancers[i].top - distance;
+      var maxTop = allDancers[i].top + distance;
+      var minLeft = allDancers[i].left - distance;
+      var maxLeft = allDancers[i].left + distance;
+      for (var k = 0; k < allDancers.length; k++) {
+        if (i !== k) {
+          if (allDancers[k].top < maxTop && allDancers[k].top > minTop && allDancers[k].left < maxLeft && allDancers[k].left > minLeft) {
+            allDancers[k].hasNeighbors = true;
+            var dancer = allDancers[k].$node;
+            dancer.addClass("groupDance");
+          }
+        }
+      }
+    }
+  };
 });
 
