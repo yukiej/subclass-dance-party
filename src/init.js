@@ -36,7 +36,12 @@ $(document).ready(function() {
       var spacing = ($("body").height() - 100)/(window.dancers.length + 1);
       window.dancers[i].setPosition(spacing * (i+1), 50);
     }
+  });
 
+  $('.scrambleButton').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].setPosition(($("body").height() - 100) * Math.random(), ($("body").width() - 100) * Math.random());
+    }
   });
 });
 
