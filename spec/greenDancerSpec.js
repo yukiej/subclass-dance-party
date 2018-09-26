@@ -22,7 +22,7 @@ describe('greenDancer', function() {
     it('should call step at least once per second', function() {
       sinon.spy(greenDancer, 'step');
       expect(greenDancer.step.callCount).to.be.equal(0);
-      //clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
+      clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
       clock.tick(timeBetweenSteps);
       //debugger;
       expect(greenDancer.step.callCount).to.be.equal(1);
