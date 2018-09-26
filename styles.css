@@ -42,8 +42,9 @@ body, a:link, a:visited, a:active{
 
 .crazyDancer:hover{
   /*border:20px solid orange;
-  border-radius:10px;*/
-  transform: rotate(45deg);
+  border-radius:10px;
+  transform: rotate(45deg);*/
+  -webkit-animation: rotation 0.2s infinite linear;
 }
 
 .greenDancer{
