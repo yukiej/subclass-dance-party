@@ -38,7 +38,6 @@ var makeDancer = class {
   constructor(top, left, timeBetweenSteps) {
     this.$node = $('<span class="dancer"><img height="100" width="100"></span>');
     this.timeBetweenSteps = timeBetweenSteps;
-    //this.step();
     this.top = top; 
     this.left = left;
     this.hasNeighbors = false;
@@ -46,11 +45,7 @@ var makeDancer = class {
   }
 
   step() {
-    console.log(this);
-    console.log(this.step);
-    console.log(this.timeBetweenSteps);
     setTimeout(this.step.bind(this), this.timeBetweenSteps);
-    //setTimeout(this.step.bind(this), 100);
   }
 
   setPosition() {

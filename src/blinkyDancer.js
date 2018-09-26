@@ -24,7 +24,7 @@
 //   //console.log('blinky step');
 // };
 
-var makeBlinkyDancer = class  extends  makeDancer {
+var makeBlinkyDancer = class extends makeDancer {
   constructor(top, left, timeBetweenSteps) {
     super(top, left, timeBetweenSteps);
     this.$node.attr('class', 'blinkyDancer');
